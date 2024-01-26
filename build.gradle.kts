@@ -39,6 +39,10 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:_")
 }
 
+semver {
+    releaseTagNameFormat = "v%s"
+}
+
 version = semver.version
 
 tasks {
