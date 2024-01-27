@@ -1,6 +1,3 @@
-import com.google.gradle.osdetector.OsDetector
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     kotlin("jvm")
     id("java-library")
@@ -21,8 +18,7 @@ repositories {
     }
 }
 
-val os = osdetector.os
-val os_platform = when (os) {
+val osPlatform = when (val os = osdetector.os) {
     "osx" -> "mac"
     "windows" -> "win"
     "linux" -> "linux"
@@ -32,7 +28,7 @@ val os_platform = when (os) {
 dependencies {
     implementation("de.treichels.hott:hott-model:_")
     implementation("commons-io:commons-io:_")
-    implementation("org.openjfx:javafx-base:_:$os_platform")
+    implementation("org.openjfx:javafx-base:_:$osPlatform")
     implementation("no.tornado:tornadofx:_")
 
     testImplementation("junit:junit:_")
