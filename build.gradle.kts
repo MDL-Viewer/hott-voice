@@ -2,8 +2,8 @@ plugins {
     kotlin("jvm")
     id("java-library")
     id("maven-publish")
-    id("com.google.osdetector")
     id("com.github.jmongard.git-semver-plugin")
+    id("org.openjfx.javafxplugin")
 }
 
 repositories {
@@ -18,18 +18,13 @@ repositories {
     }
 }
 
-val osPlatform = when (val os = osdetector.os) {
-    "osx" -> "mac"
-    "windows" -> "win"
-    "linux" -> "linux"
-    else -> throw UnsupportedOperationException("os $os is not supported")
+javafx {
+    modules = listOf("javafx.base")
 }
 
 dependencies {
-    implementation("de.treichels.hott:hott-model:_")
-    implementation("de.treichels.hott:hott-util:_")
+    api("de.treichels.hott:hott-model:_")
     implementation("commons-io:commons-io:_")
-    implementation("org.openjfx:javafx-base:_:$osPlatform")
     implementation("no.tornado:tornadofx:_")
 
     testImplementation("junit:junit:_")
