@@ -27,6 +27,7 @@ val osPlatform = when (val os = osdetector.os) {
 
 dependencies {
     implementation("de.treichels.hott:hott-model:_")
+    implementation("de.treichels.hott:hott-util:_")
     implementation("commons-io:commons-io:_")
     implementation("org.openjfx:javafx-base:_:$osPlatform")
     implementation("no.tornado:tornadofx:_")
