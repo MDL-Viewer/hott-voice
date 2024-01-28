@@ -7,5 +7,6 @@ module de.treichels.hott.voice {
     requires java.desktop;
     requires java.prefs;
     requires java.logging;
+    requires kotlin.reflect;
     exports de.treichels.hott.voice;
 }

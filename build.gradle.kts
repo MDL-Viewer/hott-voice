@@ -25,8 +25,6 @@ javafx {
 dependencies {
     api("de.treichels.hott:hott-model:_")
     implementation("commons-io:commons-io:_")
-    implementation("no.tornado:tornadofx:_")
-
     testImplementation("junit:junit:_")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:_")
 }
