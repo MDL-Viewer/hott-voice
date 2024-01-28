@@ -25,8 +25,8 @@ javafx {
 dependencies {
     api("de.treichels.hott:hott-model:_")
     implementation("commons-io:commons-io:_")
-    testImplementation("junit:junit:_")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:_")
+    implementation(kotlin("reflect"))
+    testImplementation(kotlin("test-junit"))
 }
 
 semver {
